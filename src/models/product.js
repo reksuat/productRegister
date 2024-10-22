@@ -16,7 +16,7 @@ value: {
 },
 expirationDate: {
     type: Date,
-    required: true
+    required: false
 }
 })
 
