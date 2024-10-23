@@ -5,13 +5,14 @@ export const store = async (req, res) => {
     const product = await Product.create(req.body);
     return res.status(201).json(product);
 } catch (error) {
+    console.error(error); 
     res.status(400).json({ error: 'Erro ao criar um produto' });
 }
 };
 
 export const index = async (req, res) => {
     try {
-        const product = await Product.find().exec();
+        const product = await Product.find();
         return res.status(200).json(product);
     } catch (error) {
         return res.status(500).json({ error: error });
